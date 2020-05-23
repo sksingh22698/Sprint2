@@ -25,11 +25,6 @@ public class OnlineWalletController {
 	}
 	
 	
-	@RequestMapping("/")
-	public String check() {
-		return "WORKING";
-	}
-	
 	@PutMapping("/addmoney/{userId}")
 	public ResponseEntity<Double> addMoney(@PathVariable("userId") Integer userId, Double amount) {
 		Double balance=onlineWalletSprint2Service.addMoney(userId, amount);
