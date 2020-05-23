@@ -19,6 +19,18 @@ public class OnlineWalletServiceImpl implements OnlineWalletService {
 	private OnlineWalletDao onlineWalletSprint2Dao;
 
 
+	/*********************************************************************************************************************
+	 * Method: addMoney 
+	 *
+	 * Description: Increase the balance of the user balance with the added amount 
+	 * 
+	 * @param userId:User's userId
+	 *      
+	 * @param amount:amount which has to be increased
+	 *
+	 * Created By - Vinay Singh Parmar
+	 * 
+	 ***********************************************************************************************************************/
 	@Override
 	public Double addMoney(Integer userId, Double Amount) {
 		WalletUser user = onlineWalletSprint2Dao.getUser(userId);
@@ -30,6 +42,17 @@ public class OnlineWalletServiceImpl implements OnlineWalletService {
 		return account.getAccountBalance();
 	}
 	
+	/*********************************************************************************************************************
+	 * Method: showBalance Description: took and show the balance of the user
+	 * 
+	 * @param userId:User's userid
+	 *            
+	 * @returns Double: Balance took from the wallet
+	
+	 * Created By -Vinay Singh Parmar
+	 *         
+	 * 
+	 ***********************************************************************************************************************/
 	@Override
 	public Double showBalance(Integer userId) {
 		WalletUser user = onlineWalletSprint2Dao.getUser(userId);
