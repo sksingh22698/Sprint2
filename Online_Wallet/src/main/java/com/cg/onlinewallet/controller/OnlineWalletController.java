@@ -25,11 +25,28 @@ public class OnlineWalletController {
 	}
 	
 	
+	/*************************************************************************************************************
+	* Method:addMoney
+	* Description:for adding money
+	* @param userId:User's Id
+	* @param amount:amount to be added
+	* @returns Entity:it will return added amount.
+	* Created By-Vinay Singh Parmar
+	*************************************************************************************************************/
+	
 	@PutMapping("/addmoney/{userId}")
 	public ResponseEntity<Double> addMoney(@PathVariable("userId") Integer userId, Double amount) {
 		Double balance=onlineWalletSprint2Service.addMoney(userId, amount);
 		return new ResponseEntity<Double>(balance, HttpStatus.OK);
 	}
+	
+	/*********************************************************************************************************************
+	* Method:showBalance
+	* Description:for showing the balance in the account
+	* @param userId:User's Id
+	* @returns Entity:return the balance i.e. available in the account.
+	* Created By-Vinay Singh Parmar
+	***********************************************************************************************************************/
 	
 	@GetMapping("/showbalance/{userId}")
 	public ResponseEntity<Double> showBalance(@PathVariable("userId") Integer userId) {
